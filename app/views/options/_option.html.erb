@@ -1,0 +1,6 @@
+<div class="card">
+  <h4>Would you Rather</h4>
+  <%= link_to option.answer_one, options_path('one'), remote: true, method: :update %>
+  <h4>or</h4>
+  <%= link_to option.answer_two, options_path('two'), remote: true, method: :update %>
+</div>

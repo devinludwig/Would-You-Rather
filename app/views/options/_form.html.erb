@@ -1,0 +1,18 @@
+<%= render "layouts/errors", :object => @option %>
+
+<%= form_for @option, remote: true do |f| %>
+  <div class="field">
+    <%= f.label :answer_one %>
+    <%= f.text_field :answer_one %>
+  </div>
+
+  <div class="field">
+    <%= f.label :answer_two %>
+    <%= f.text_field :answer_two %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Add question", class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<h1>All Questions</h1>
+
+<%= link_to "New question", new_option_path, id: 'new_link', remote: true %>
+
+<div id="options">
+  <% @options.each do |option| %>
+  <%= render(option) %>
+  <% end %>
+</div>
