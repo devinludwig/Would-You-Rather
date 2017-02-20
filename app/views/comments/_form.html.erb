@@ -1,0 +1,12 @@
+<%= render "layouts/errors", :object => @option %>
+
+<%= form_for [@option, @comment], remote: true do |f| %>
+  <div class="field">
+    <%= f.label 'Comment' %>
+    <%= f.text_field :content %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add comment", class: "btn btn-primary" %>
+  </div>
+<% end %>

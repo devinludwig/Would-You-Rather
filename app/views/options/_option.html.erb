@@ -1,6 +1,13 @@
 <div class="card">
   <h4>Would you Rather</h4>
-  <%= link_to option.answer_one, options_path('one'), remote: true, method: :update %>
-  <h4>or</h4>
-  <%= link_to option.answer_two, options_path('two'), remote: true, method: :update %>
+  <h5><%= link_to option.answer_one, option_path(option, vote: 'one'), method: :patch %> <%= option.votes_one %> or
+  <%= link_to option.answer_two, option_path(option, vote: 'two'), method: :patch %> |  <%= option.votes_two %></h5>
+  <%= link_to "Comment", new_option_comment_path(option), id: 'comment_on_' + option.id.to_s, remote: true %>
+  <div class="collection" id="option_<%= option.id %>_comments">
+    <% option.comments.each do |comment| %>
+      <p class="collection-item">
+        <%= comment.content %>
+      </p>
+    <% end %>
+  </div>
 </div>
