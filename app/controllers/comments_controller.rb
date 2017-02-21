@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
+
+
   def edit
   end
 
@@ -24,7 +26,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-
+    @option = Option.find(params[:option_id])
+    @comment = Comment.find(params[:id])
+    @comment.destroy
   end
 
   private
