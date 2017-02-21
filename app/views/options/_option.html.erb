@@ -1,5 +1,5 @@
-<div class="card">
-  <h4>Would you Rather</h4>
+<div class="card" id="option_<%= option.id %>">
+  <h4>Would you Rather | <%= link_to 'Delete', option_path(option), method: :delete, remote: true %> </h4>
   <h5><%= link_to option.answer_one, option_path(option, vote: 'one'), method: :patch, remote: true %> | <span id="votes_one_<%= option.id %>"><%= option.votes_one %></span> or
   <%= link_to option.answer_two, option_path(option, vote: 'two'), method: :patch, remote: true %> | <span id="votes_two_<%= option.id %>"><%= option.votes_two %></span></h5>
   <%= link_to "Comment", new_option_comment_path(option), id: 'comment_on_' + option.id.to_s, remote: true %>

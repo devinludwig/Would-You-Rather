@@ -53,7 +53,6 @@ class OptionsController < ApplicationController
   def destroy
     @option = Option.find(params[:id])
     @option.destroy
-    redirect_to :index
   end
 
   private
