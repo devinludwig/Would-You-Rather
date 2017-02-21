@@ -9,14 +9,14 @@ class CommentsController < ApplicationController
 
   def create
     @option = Option.find(params[:option_id])
-    @comment = @option.comments.new(comment_params)
+    @comment = @option.comments.new(content: comment_params[:content], user_id: current_user.id)
     if @comment.save
       respond_to do |format|
         format.html { redirect_to root_path }
         format.js
       end
     else
-      render :back
+      redirect_to options_path
     end
   end
 
