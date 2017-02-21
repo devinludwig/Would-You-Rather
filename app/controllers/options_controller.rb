@@ -29,11 +29,18 @@ class OptionsController < ApplicationController
   def update
     @option = Option.find(params[:id])
     if params[:vote] == "one"
-      @option.update(votes_one: @option.votes_one + 1)
-      redirect_to options_path
+      if @option.update(votes_one: @option.votes_one + 1)
+        respond_to do |format|
+          format.html { redirect_to options_path }
+          format.js
+        end
+      end
     elsif params[:vote] == "two"
       @option.update(votes_two: @option.votes_two + 1)
-      redirect_to options_path
+      respond_to do |format|
+        format.html { redirect_to options_path }
+        format.js
+      end
     else
       if @option.update(option_params)
         redirect_to options_path

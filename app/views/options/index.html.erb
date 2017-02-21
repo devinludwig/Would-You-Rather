@@ -3,7 +3,7 @@
 <%= link_to "New question", new_option_path, id: 'new_link', remote: true %>
 
 <div id="options">
-  <% @options.each do |option| %>
+  <% @options.order(:created_at).each do |option| %>
   <%= render(option) %>
   <% end %>
 </div>
