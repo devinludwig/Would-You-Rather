@@ -17,6 +17,7 @@ class OptionsController < ApplicationController
 
   def index
     @options = Option.all
+    @option = Option.new
   end
 
   def show

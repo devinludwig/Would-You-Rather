@@ -1,6 +1,7 @@
 <h1>All Questions</h1>
 
-<%= link_to "New question", new_option_path, id: 'new_link', remote: true %>
+<%= link_to "New question", new_option_path, href: '#modal1', class: 'modal-trigger', remote: true %>
+<%= render 'form' %>
 
 <div id="options">
   <% @options.order(:created_at).each do |option| %>
