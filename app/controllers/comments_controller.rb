@@ -4,8 +4,6 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-
-
   def edit
   end
 
@@ -14,7 +12,7 @@ class CommentsController < ApplicationController
     @comment = @option.comments.new(comment_params)
     if @comment.save
       respond_to do |format|
-        format.html { redirect_to options_path }
+        format.html { redirect_to root_path }
         format.js
       end
     else

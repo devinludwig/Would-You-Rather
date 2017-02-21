@@ -5,10 +5,7 @@
   <%= link_to "Comment", new_option_comment_path(option), id: 'comment_on_' + option.id.to_s, remote: true %>
   <div class="collection" id="option_<%= option.id %>_comments">
     <% option.comments.each do |comment| %>
-      <p class="collection-item">
-        <%= comment.content %>
-        <%= link_to "Delete", option_comment_path(option,comment), method: :delete, remote: true %>
-      </p>
+      <%= render('comments/comment', comment: comment) %>
     <% end %>
   </div>
 </div>

@@ -1,3 +1,3 @@
 $('#new_comment').remove();
 $('#comment_on_<%= @option.id %>').show();
-$('#option_<%= @option.id %>_comments').prepend("<p class='collection-item'><%= @comment.content %></p>")
+$('#option_<%= @option.id %>_comments').prepend("<%= j render(@comment) %>");
